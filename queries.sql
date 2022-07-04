@@ -7,3 +7,4 @@ vet_clinic=# SELECT date_of_birth FROM animals WHERE name LIKE 'Agumon' OR name 
 vet_clinic=# SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5;
 vet_clinic=# SELECT * FROM animals WHERE neutered = '1';
 vet_clinic=#  SELECT * FROM animals WHERE name NOT LIKE 'Gabumon';
+vet_clinic=# SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
