@@ -13,7 +13,7 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
  ('Boarmon', '2005-06-07', 7, '1', 20.4), 
  ('Blossom', '1998-10-13', 3, '1', 17), 
  ('Ditto', '2022-05-14', 4, '1', 22);
- 
+
  BEGIN;
  UPDATE animals SET species = 'unspecified';
  COMMIT;
@@ -26,3 +26,12 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
  BEGIN;
  DROP TABLE;
  ROLLBACK;
+
+ BEGIN;
+ DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+ SAVEPOINT SAVE1;
+ UPDATE animals SET weight_kg = weight_kg * -1;
+ ROLLBACK TO SAVE1;
+ UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+ COMMIT;
+ 
