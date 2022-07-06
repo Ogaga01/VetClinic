@@ -66,3 +66,9 @@ FROM animals
 FULL JOIN species
 ON animals.species_id = species.id
 GROUP BY species.name;
+
+SELECT name, owner.id, full_name
+FROM animals
+FULL JOIN owner
+ON animals.owner_id = owner.id
+WHERE owner.id = 2;
