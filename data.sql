@@ -34,4 +34,5 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
  ROLLBACK TO SAVE1;
  UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
  COMMIT;
- 
+
+ SELECT COUNT(*) FROM animals;
