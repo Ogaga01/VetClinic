@@ -43,3 +43,9 @@ SELECT MAX(weight_kg) FROM animals GROUP BY species;
 SELECT MIN(weight_kg) FROM animals GROUP BY species;
 
 SELECT AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
+SELECT name, owner_id, full_name
+FROM animals
+FULL JOIN owner
+ON animals.owner_id = owner.id
+WHERE owner_id = 4;
