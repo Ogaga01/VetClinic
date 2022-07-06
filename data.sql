@@ -42,3 +42,5 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 SELECT AVG(weight_kg) FROM animals;
 
 SELECT COUNT(escape_attempts) FROM animals GROUP BY neutered;
+
+SELECT MAX(weight_kg) FROM animals GROUP BY species;
