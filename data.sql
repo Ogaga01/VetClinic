@@ -25,3 +25,8 @@ INSERT INTO owner (full_name, age) VALUES
 INSERT INTO species (name) VALUES
 ('Pokemon'),
 ('Digimon');
+
+BEGIN;
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';
+COMMIT;
