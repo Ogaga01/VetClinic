@@ -14,3 +14,4 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
  ('Blossom', '1998-10-13', 3, '1', 17), 
  ('Ditto', '2022-05-14', 4, '1', 22);
  UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+ UPDATE animals SET species = 'pokemon' WHERE species = 'unspecified';
