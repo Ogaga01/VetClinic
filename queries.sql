@@ -78,3 +78,9 @@ FROM animals
 FULL JOIN owner
 ON animals.owner_id = owner.id
 WHERE owner.id = 5 AND escape_attempts = 0;
+
+SELECT COUNT(name), full_name
+FROM animals
+FULL JOIN owner
+ON animals.owner_id = owner.id
+GROUP BY full_name;
