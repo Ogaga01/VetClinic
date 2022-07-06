@@ -48,7 +48,7 @@ SELECT name, owner_id, full_name
 FROM animals
 FULL JOIN owner
 ON animals.owner_id = owner.id
-WHERE owner_id = 4;
+WHERE full_name = 'Melody Pond';
 
 SELECT animals.name, species.name
 FROM animals
@@ -71,7 +71,7 @@ SELECT name, owner.id, full_name
 FROM animals
 FULL JOIN owner
 ON animals.owner_id = owner.id
-WHERE owner.id = 2;
+WHERE full_name = 'Jennifer Orwell';
 
 SELECT name, owner.id, full_name
 FROM animals
