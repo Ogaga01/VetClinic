@@ -49,3 +49,9 @@ FROM animals
 FULL JOIN owner
 ON animals.owner_id = owner.id
 WHERE owner_id = 4;
+
+SELECT animals.name, species.name
+FROM animals
+FULL JOIN species
+ON animals.species_id = species.id
+WHERE species.id = 1;
