@@ -38,3 +38,5 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
  SELECT COUNT(*) FROM animals;
 
  SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+
+SELECT AVG(weight_kg) FROM animals;
