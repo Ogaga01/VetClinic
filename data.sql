@@ -28,5 +28,5 @@ INSERT INTO species (name) VALUES
 
 BEGIN;
 UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
-UPDATE animals SET species_id = 2 WHERE name NOT LIKE '%mon';
+UPDATE animals SET species_id = 1 WHERE name NOT LIKE '%mon';
 COMMIT;
