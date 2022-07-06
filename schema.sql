@@ -18,3 +18,12 @@ full_name VARCHAR(30),
 age INT,
 PRIMARY KEY(id)
 );
+
+CREATE TABLE species(
+id INT GENERATED ALWAYS AS IDENTITY,
+name VARCHAR(25),
+PRIMARY KEY(id)
+);
+
+ALTER TABLE animals ADD species_id INT;
+ALTER TABLE animals ADD FOREIGN KEY (species_id) REFERENCES species(id) ON DELETE CASCADE;
