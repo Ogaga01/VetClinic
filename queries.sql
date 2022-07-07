@@ -86,11 +86,13 @@ ON animals.owner_id = owner.id
 GROUP BY full_name;
 
 SELECT animals.name, vet_id, vets.name, date_of_visit
-FROM animals 
-FULL JOIN visits
+FROM visits 
+FULL JOIN animals
 ON animals.id = visits.animals_id
-WHERE  vet_id = 1
-ORDER BY date_of_visit DESCENDING;
+FULL JOIN vets
+ON vets.id = visits.vet_id
+WHERE  vets.name = 'William Tatcher'
+ORDER BY date_of_visit;
 
 SELECT COUNT(name), vet_id
 FROM animals
