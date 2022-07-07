@@ -118,3 +118,11 @@ FULL JOIN vets
 ON vets.id = visits.vet_id
 WHERE vets.name = 'Stephanie Mendez'
 AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
+
+SELECT COUNT(animals_id), animals.name
+FROM visits
+FULL JOIN animals
+ON animals.id = visits.animals_id
+FULL JOIN vets
+ON vets.id = visits.vet_id
+GROUP BY animals.name;
