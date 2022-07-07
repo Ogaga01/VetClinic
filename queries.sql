@@ -109,3 +109,12 @@ FULL JOIN vets
 ON specializations.vet_id = vets.id
 FULL JOIN species
 ON specializations.species_id = species.id;
+
+SELECT animals.name, vets.name, date_of_visit
+FROM visits
+FULL JOIN animals
+ON animals.id = visits.animals_id
+FULL JOIN vets
+ON vets.id = visits.vet_id
+WHERE vets.name = 'Stephanie Mendez'
+AND date_of_visit BETWEEN '2020-04-01' AND '2020-08-30';
