@@ -91,3 +91,10 @@ FULL JOIN visits
 ON animals.id = visits.animals_id
 WHERE  vet_id = 1
 ORDER BY date_of_visit DESCENDING;
+
+SELECT COUNT(name), vet_id
+FROM animals
+FULL JOIN visits
+ON animals.id = visits.animals_id
+WHERE vet_id = 3
+GROUP BY vet_id;
