@@ -85,7 +85,7 @@ FULL JOIN owner
 ON animals.owner_id = owner.id
 GROUP BY full_name;
 
-SELECT animals.name, vet_id, date_of_visit
+SELECT animals.name, vet_id, vets.name, date_of_visit
 FROM animals 
 FULL JOIN visits
 ON animals.id = visits.animals_id
@@ -98,3 +98,10 @@ FULL JOIN visits
 ON animals.id = visits.animals_id
 WHERE vet_id = 3
 GROUP BY vet_id;
+
+SELECT vets.name, species.name, species_id
+FROM specializations
+FULL JOIN vets
+ON specializations.vet_id = vets.id
+FULL JOIN species
+ON specializations.species_id = species.id;
