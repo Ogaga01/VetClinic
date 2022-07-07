@@ -128,12 +128,11 @@ FULL JOIN vets
 ON vets.id = visits.vet_id
 GROUP BY animals.name;
 
-SELECT animals.name, vet_id, vets.name, date_of_visit
+SELECT animals.id, animals.name AS Animal, vet_id, vets.name AS Vet, species_id, date_of_visit
 FROM visits 
 FULL JOIN animals
 ON animals.id = visits.animals_id
 FULL JOIN vets
 ON vets.id = visits.vet_id
-WHERE  vets.name = 'Maisy Smith'
-ORDER BY date_of_visit ASC
+ORDER BY date_of_visit DESC
 LIMIT 1;
