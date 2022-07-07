@@ -94,12 +94,14 @@ ON vets.id = visits.vet_id
 WHERE  vets.name = 'William Tatcher'
 ORDER BY date_of_visit DESC;
 
-SELECT COUNT(name), vet_id
-FROM animals
-FULL JOIN visits
+SELECT COUNT(animals.name), vets.name
+FROM visits
+FULL JOIN animals
 ON animals.id = visits.animals_id
-WHERE vet_id = 3
-GROUP BY vet_id;
+FULL JOIN vets
+ON vets.id = visits.vet_id
+WHERE vets.name = 'Stephanie Mendez'
+GROUP BY vets.name;
 
 SELECT vets.name, species.name, species_id
 FROM specializations
