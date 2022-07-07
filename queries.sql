@@ -84,3 +84,10 @@ FROM animals
 FULL JOIN owner
 ON animals.owner_id = owner.id
 GROUP BY full_name;
+
+SELECT animals.name, vet_id, date_of_visit
+FROM animals 
+FULL JOIN visits
+ON animals.id = visits.animals_id
+WHERE  vet_id = 1
+ORDER BY date_of_visit DESCENDING;
