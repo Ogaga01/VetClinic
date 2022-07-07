@@ -92,7 +92,8 @@ ON animals.id = visits.animals_id
 FULL JOIN vets
 ON vets.id = visits.vet_id
 WHERE  vets.name = 'William Tatcher'
-ORDER BY date_of_visit DESC;
+ORDER BY date_of_visit DESC
+LIMIT 1;
 
 SELECT COUNT(animals.name), vets.name
 FROM visits
