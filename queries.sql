@@ -148,3 +148,11 @@ JOIN visits
 ON vets.id = visits.vet_id
 WHERE vets.name = 'Maisy Smith'
 GROUP BY vets.name;
+
+SELECT animals.id, animals.name AS Animal, vet_id, vets.name AS Vet, species_id, date_of_visit
+FROM visits
+FULL JOIN animals
+ON animals.id = visits.animals_id
+FULL JOIN vets
+ON vets.id = visits.vet_id
+WHERE vets.name = 'Maisy Smith';
