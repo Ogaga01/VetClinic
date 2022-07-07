@@ -136,3 +136,15 @@ FULL JOIN vets
 ON vets.id = visits.vet_id
 ORDER BY date_of_visit DESC
 LIMIT 1;
+
+SELECT vets.name AS "Vet Name", species.name AS "Specialties" FROM vets
+LEFT JOIN specializations
+ON vets.id = specializations.vet_id
+LEFT JOIN species
+ON specializations.species_id = species.id;
+
+SELECT vets.name, COUNT(visits.date_of_visit) FROM vets
+JOIN visits
+ON vets.id = visits.vet_id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY vets.name;
