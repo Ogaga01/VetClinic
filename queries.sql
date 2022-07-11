@@ -156,3 +156,11 @@ ON animals.id = visits.animals_id
 FULL JOIN vets
 ON vets.id = visits.vet_id
 WHERE vets.name = 'Maisy Smith';
+
+SELECT COUNT(*) FROM visits where animal_id = 4;
+
+SELECT * FROM visits where vet_id = 2;
+
+
+
+
